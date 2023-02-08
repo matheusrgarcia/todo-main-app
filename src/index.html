@@ -17,24 +17,35 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body class="dark">
+  <body class="dark" id="body">
     <main>
       <div class="heading-banner"></div>
       <div class="todo-wrapper">
         <div class="todo-container">
           <div class="todo-container-heading">
             <span>TODO</span>
-            <button>
+            <button onclick="handleDarkLightMode()">
               <img
                 src="./images/icon-sun.svg"
                 alt="Button turn dark/light mode"
               />
             </button>
           </div>
-          <input type="text" name="new-todo" class="new-todo" />
+          <div class="todo-list-container">
+            <input
+              type="text"
+              name="new-todo"
+              class="todo-item"
+              id="new-todo"
+              placeholder="Create a new todo..."
+            />
+
+            <div class="todo-list-items"></div>
+          </div>
         </div>
       </div>
     </main>

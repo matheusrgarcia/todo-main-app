@@ -2,12 +2,16 @@
   --background-color: hsl(235, 21%, 11%);
   --text-color: #ffffff;
   --container-color: hsl(235, 24%, 19%);
+  --separator: hsl(234, 39%, 85%);
+  --title: #ffffff;
 }
 
 .light {
   --background-color: hsl(0, 0%, 98%);
   --text-color: #000000;
   --container-color: hsl(236, 33%, 92%);
+  --separator: hsl(234, 39%, 85%);
+  --title: #ffffff;
 }
 
 *,
@@ -68,7 +72,7 @@ main {
 .todo-container span {
   font-size: 44px;
   letter-spacing: 12px;
-  color: var(--text-color);
+  color: var(--title);
   font-weight: 700;
 }
 
@@ -79,7 +83,11 @@ main {
   background: none;
 }
 
-.new-todo {
+.todo-list-container {
+  width: 100%;
+}
+
+.todo-item {
   width: 100%;
   height: 50px;
   border: 1px solid var(--container-color);
@@ -87,6 +95,40 @@ main {
   color: var(--text-color);
   border-radius: 6px;
   padding: 8px 8px 8px 40px;
+  font-size: 14px;
+}
+
+.todo-list-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.todo-new:only-child {
+  border-radius: 6px;
+  padding: 8px 8px 8px 40px;
+  border-bottom: none;
+} 
+
+.todo-list-items :first-child:not(:last-child)  {
+  border-top: 1px solid var(--container-color);
+  border-radius: 6px 6px 0 0;
+}
+
+.todo-list-items :last-child:not(:first-child) {
+  border-bottom: 1px solid var(--container-color);
+  border-radius: 0 0 6px 6px;
+}
+
+.todo-new {
+  border-bottom: 1px solid var(--separator);
+  border-radius: 0;
+}
+
+.input-new-todo  :active,
+:focus-visible {
+  outline: 1px solid var(--container-color);
 }
 
 @media screen and (max-width: 700px) {
