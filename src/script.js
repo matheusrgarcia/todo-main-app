@@ -42,20 +42,10 @@ function addToList(item) {
   todoItem.setAttribute("value", item.description);
   todoItem.setAttribute("class", "todo-item todo-new");
 
-  todoListItemContainer.appendChild(todoItem);
+  todoListItemContainer.insertBefore(
+    todoItem,
+    todoListItemContainer.firstChild
+  );
 }
-
-// function render() {
-//   const todoListItemContainer =
-//     document.getElementsByClassName("todo-list-items")[0];
-
-//   todoList.forEach((item) => {
-//     const todoItem = document.createElement("input");
-//     todoItem.value = item.description;
-//     todoListItemContainer.appendChild(todoItem);
-//   });
-// }
-
-// render();
 
 document.addEventListener("keypress", handleKeyPress);
